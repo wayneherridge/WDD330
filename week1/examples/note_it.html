@@ -24,6 +24,8 @@
             document.getElementById("note_editor").value = null
         }
 
+        // Could not figure out how to make it so that description_input and note_editor were only called once.
+
         function showAllNotes() {
             var storedNotesString = localStorage.getItem("all_notes")
             allNotes = JSON.parse(storedNotesString)
@@ -49,7 +51,6 @@
         }
         
         input {
-            margin-top: 5px;
             border: none;
             border-radius: 5px;
             box-shadow: 0px 0px 5px #666666 inset;
@@ -60,6 +61,15 @@
         
         input:focus {
             outline: none;
+        }
+        
+        #note_entry_area {
+            width: 500px;
+            padding-left: 5px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #666666 inset;
+            text-indent: 5px;
         }
         
         textarea {
@@ -73,20 +83,11 @@
             resize: none;
             overflow: scroll;
         }
-        
-        #note_entry_area {
-            width: 500px;
-            padding-left: 5px;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px #666666 inset;
-            text-indent: 5px;
-        }
     </style>
 </head>
 
 <body onload="showAllNotes()">
-    <section id="note_entry">
+    <section id="note_entry_area">
         <h1>Note it!</h1>
         Description: <input id="description_input">
         <textarea id="note_editor" placeholder="Note it down. Don't forget."></textarea>
