@@ -5,7 +5,7 @@ const links = [{
     url: "week1/index.html"
 }, {
     label: "Week2",
-    url: ""
+    url: "week2/index.html"
 }]
 
 links.forEach(link => {

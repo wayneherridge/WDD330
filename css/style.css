@@ -17,7 +17,8 @@ h3,
 h4,
 h5,
 h6,
-li {
+li,
+a {
     font-family: 'Didact Gothic', sans-serif;
 }
 
@@ -30,5 +31,9 @@ h4 {
 }
 
 li {
-    font-size: 1em;
+    font-size: 1.2em;
+}
+
+#links {
+    list-style-type: none;
 }
