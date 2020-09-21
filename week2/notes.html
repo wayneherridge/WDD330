@@ -48,21 +48,31 @@
         <hr>
         <h4>Converting Strings to Numbers</h4>
         <p>Using the 'Number' method is the best way to change a string to a number - Number('23')</p>
-		<p>The string will not be able to be changed to a number with Number('hello'). If you try, it will result in a NaN.</p>
-		<p>Type coercion can also be used - const answer = '5' * 1 which will = 5 and be a 'number' type. Another way could be to add a + in front of it - const answer = +'5' which will, again, result in '5'.</p>
-		<p><b>They should not be used everytime because they can be hacky.</b></p>
-		
-		<h4>Converting Numbers to Strings</h4>
-		<p>Using the String function is the prefered way of changing a number to a string - String(3) will result in '3'.</p>
-		<p>This can also be coerced by adding an empty string - 3 + '' <b>This is not recommended</b></p>
-		<p>Another option is to use toString() - 10..toString() reults in '10'.</p>
-		<p>10..toString(10) changes to base number to binary '1010'</p>
-		<hr />
-		<h4>Parsing</h4>
-		<p></p>
+        <p>The string will not be able to be changed to a number with Number('hello'). If you try, it will result in a NaN.</p>
+        <p>Type coercion can also be used - const answer = '5' * 1 which will = 5 and be a 'number' type. Another way could be to add a + in front of it - const answer = +'5' which will, again, result in '5'.</p>
+        <p><b>They should not be used everytime because they can be hacky.</b></p>
+
+        <h4>Converting Numbers to Strings</h4>
+        <p>Using the String function is the prefered way of changing a number to a string - String(3) will result in '3'.</p>
+        <p>This can also be coerced by adding an empty string - 3 + '' <b>This is not recommended</b></p>
+        <p>Another option is to use toString() - 10..toString() reults in '10'.</p>
+        <p>10..toString(10) changes to base number to binary '1010'</p>
+        <hr />
+        <h4>Parsing</h4>
+        <p>parseInt() can be used to convert a string representation of a numerical value back into a number.</p>
+        <p>parseInt('1010', 2) converts from binary, back to decimal - 10</p>
+        <p>If a string starts with a number, the parseInt function will use the number and ignore the letters the come after:</p>
+        <p>const address = '221B Baker Street'; parseInt(address, 10) - 221 : This returns a NaN when checking if this is a number - Number(address)</p>
+        <p>If you use parseInt with a decimal it will remove anything after the decimal point:</p>
+        <p>parseInt('2.9',10) - 2</p>
+        <p>parseFloat will convert strings into floating point decimal numbers:</p>
+        <p>parseFloat('2.9',10) - 2.9</p>
         <hr>
         <h4>Template Literals</h4>
-        <p></p>
+        <p>These are special types of string introduced in ES6 - they use the back tick character to deliminate the string</p>
+        <p>example - 'Hello!'</p>
+        <p>Both types of quote marks can be used within the string which is an advantage:</p>
+        <p>example - 'She said, "It's me!"'</p>
     </main>
 
 </body>

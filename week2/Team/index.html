@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Assignment 1</title>
+
+    <script>
+        function readInput() {
+            const myInput = document.getElementById("myInput").value
+            document.getElementById("input_result").innerHTML = myInput
+        }
+
+        function checkNumbers() {
+            const numberAsText = document.getElementById("noInput").value
+            const aNumber = parseInt(numberAsText)
+            const result = aNumber * (aNumber + 1) / 2
+
+            if (numberAsText != "" && !isNaN(aNumber)) {
+                document.getElementById("no_result").innerHTML = 'total:' + result
+            } else {
+                document.getElementById("no_result").innerHTML = "Please enter a number!"
+            }
+        }
+
+        function addNumbers() {
+            var noOne = Number(document.getElementById("noOne").value)
+            var noTwo = Number(document.getElementById("noTwo").value)
+            document.getElementById("add_result").innerHTML = 'total : ' + (noOne + noTwo)
+        }
+
+        function subNumbers() {
+            var noOne = Number(document.getElementById("noOne").value)
+            var noTwo = Number(document.getElementById("noTwo").value)
+            document.getElementById("add_result").innerHTML = 'total : ' + noOne - noTwo
+        }
+
+        function divNumbers() {
+            var noOne = Number(document.getElementById("noOne").value)
+            var noTwo = Number(document.getElementById("noTwo").value)
+            document.getElementById("add_result").innerHTML = 'total : ' + noOne / noTwo
+        }
+
+        function mulNumbers() {
+            var noOne = Number(document.getElementById("noOne").value)
+            var noTwo = Number(document.getElementById("noTwo").value)
+            document.getElementById("add_result").innerHTML = 'total : ' + noOne * noTwo
+        }
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Input to DOM</h1>
+
+    <h3>Step 1</h3>
+    <input id="myInput">
+    <button onclick="readInput()">Show my Input</button>
+    <div id="input_result"></div>
+
+    <h3>Step 2</h3>
+    <input id="noInput">
+    <button onclick="checkNumbers()">Show the Sum</button>
+    <div id="no_result"></div>
+
+    <h3>Step 3</h3>
+    <input id="noOne">
+    <button onclick="addNumbers()">+</button>
+    <button onclick="subNumbers()">-</button>
+    <button onclick="mulNumbers()">x</button>
+    <button onclick="divNumbers()">/</button>
+    <input id="noTwo">
+
+    <div id="add_result"></div>
+
+
+</body>
+
+</html>
