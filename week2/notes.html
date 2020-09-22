@@ -73,6 +73,28 @@
         <p>example - 'Hello!'</p>
         <p>Both types of quote marks can be used within the string which is an advantage:</p>
         <p>example - 'She said, "It's me!"'</p>
+        <p>Javascript expressions can be inserted inside a string and the result can be displayed:</p>
+        <p>const name = 'SIRI'; 'Hello ${ name }!'; - 'Hello SIRI!'</p>
+        <p>const age = 39; 'I will be ${ age + 1 } next year'; - 'I will be 40 next year'</p>
+        <p>They can also include line breaks using \n - each one for a new row.</p>
+        <hr>
+        <h4>Array Properties and Methods</h4>
+        <p>example of an array:</p>
+        <p>const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow'];</p>
+        <p>avenger.length; - counts how many items are in the array</p>
+        <p>avengers[avengers.length - 1]; - 'Black Widow' : this shows the last item in the list.</p>
+        <p>Arrays can be made longer than the list but the additional slots will be filled with 'undefined'</p>
+        <p>avengers.length = 8; avengers</p>
+        <p>result : ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow', undefined, undefined]</p>
+        <p>You can also make the array shorter - it will then just show the items you count:</p>
+        <p>avengers.length = 3; avengers</p>
+        <p>result : ['Captain America', 'Iron Man', 'Thor']</p>
+        <h4>Pop, Push, Shift, and Unshift</h4>
+        <p>To remove the last item from an array : avengers.pop()</p>
+        <p>To remove the first item from an array : avengers.shift()</p>
+        <p>To append a new item to the end of an array : avengers.push('Thor')</p>
+        <p>To apend a new item to the beginning of an array : avengers.unshift('Captain America')</p>
+
     </main>
 
 </body>
