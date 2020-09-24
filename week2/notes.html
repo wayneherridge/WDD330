@@ -18,7 +18,22 @@
         <h3>Week 2 - Notes</h3>
         <hr>
 
-        <h4>Variables</h4>
+        <h4>Contents</h4>
+        <ul>
+            <li><a href="#variables">Variables</a></li>
+            <li><a href="#dataTypes">Primative Data Types</a></li>
+            <li><a href="#scope">Scope</a></li>
+            <li><a href="#s2num">Convert Strings to Numbers</a></li>
+            <li><a href="#num2s">Convert Numbers to Strings</a></li>
+            <li><a href="#parsing">Parsing</a></li>
+            <li><a href="#tempLits">Template Literals</a></li>
+            <li><a href="#arrays">Array Properties and Methods</a></li>
+            <li><a href="#functions">Functions</a></li>
+        </ul>
+
+        <hr>
+
+        <h4 id="variables">Variables</h4>
         <p>They must be delared before they are used.</p>
         <ol>
             <li>const name = 'Alexa'; - This wont be assigned to another string</li>
@@ -27,7 +42,8 @@
         <p>'typeof' can be used to check the type of variable : typeof name; (answer = 'string'</p>
         <p>Multiple variables can be delared in the same row like this : let x = 3, y = 4, z = 5; They must be divided by commas.</p>
         <hr>
-        <h4>Primative Data Types</h4>
+
+        <h4 id="dataTypes">Primative Data Types</h4>
         <ul>
             <li>String</li>
             <li>Symbol</li>
@@ -37,7 +53,8 @@
             <li>Null</li>
         </ul>
         <hr>
-        <h4>Scope</h4>
+
+        <h4 id="scope">Scope</h4>
         <p>const amd let are blocked scope - their value belongs to the block they are declared in.</p>
 
         <h4>Global Scope</h4>
@@ -46,19 +63,21 @@
         <h4>Local Scope</h4>
         <p>any variables defined within a block using const and let will only be used in that particular block.</p>
         <hr>
-        <h4>Converting Strings to Numbers</h4>
+
+        <h4 id="s2num">Converting Strings to Numbers</h4>
         <p>Using the 'Number' method is the best way to change a string to a number - Number('23')</p>
         <p>The string will not be able to be changed to a number with Number('hello'). If you try, it will result in a NaN.</p>
         <p>Type coercion can also be used - const answer = '5' * 1 which will = 5 and be a 'number' type. Another way could be to add a + in front of it - const answer = +'5' which will, again, result in '5'.</p>
         <p><b>They should not be used everytime because they can be hacky.</b></p>
 
-        <h4>Converting Numbers to Strings</h4>
+        <h4 id="num2s">Converting Numbers to Strings</h4>
         <p>Using the String function is the prefered way of changing a number to a string - String(3) will result in '3'.</p>
         <p>This can also be coerced by adding an empty string - 3 + '' <b>This is not recommended</b></p>
         <p>Another option is to use toString() - 10..toString() reults in '10'.</p>
         <p>10..toString(10) changes to base number to binary '1010'</p>
         <hr />
-        <h4>Parsing</h4>
+
+        <h4 id="parsing">Parsing</h4>
         <p>parseInt() can be used to convert a string representation of a numerical value back into a number.</p>
         <p>parseInt('1010', 2) converts from binary, back to decimal - 10</p>
         <p>If a string starts with a number, the parseInt function will use the number and ignore the letters the come after:</p>
@@ -68,7 +87,8 @@
         <p>parseFloat will convert strings into floating point decimal numbers:</p>
         <p>parseFloat('2.9',10) - 2.9</p>
         <hr>
-        <h4>Template Literals</h4>
+
+        <h4 id="tempLits">Template Literals</h4>
         <p>These are special types of string introduced in ES6 - they use the back tick character to deliminate the string</p>
         <p>example - 'Hello!'</p>
         <p>Both types of quote marks can be used within the string which is an advantage:</p>
@@ -78,7 +98,8 @@
         <p>const age = 39; 'I will be ${ age + 1 } next year'; - 'I will be 40 next year'</p>
         <p>They can also include line breaks using \n - each one for a new row.</p>
         <hr>
-        <h4>Array Properties and Methods</h4>
+
+        <h4 id="arrays">Array Properties and Methods</h4>
         <p>example of an array:</p>
         <p>const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow'];</p>
         <p>avenger.length; - counts how many items are in the array</p>
@@ -89,13 +110,103 @@
         <p>You can also make the array shorter - it will then just show the items you count:</p>
         <p>avengers.length = 3; avengers</p>
         <p>result : ['Captain America', 'Iron Man', 'Thor']</p>
+
         <h4>Pop, Push, Shift, and Unshift</h4>
         <p>To remove the last item from an array : avengers.pop()</p>
         <p>To remove the first item from an array : avengers.shift()</p>
         <p>To append a new item to the end of an array : avengers.push('Thor')</p>
         <p>To apend a new item to the beginning of an array : avengers.unshift('Captain America')</p>
+
         <h4>Merging Arrays</h4>
         <p>concat() can be used to merge arrays with one or more arrays</p>
+        <p>avengers.concat(['Hulk','Hawkeye', 'Black Widow']);</p>
+        <p>result : ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow']</p>
+        <p>This does not change the original array - it creates another array.</p>
+        <p>An alternative to this is to use the new ES6 spread operator which is three dots, ...</p>
+        <p>This has the affect of spreading out all the values in each array which allows them to be placed inside a new array.</p>
+        <p>avengers = [ ...avengers, ...['Hulk','Hawkeye', 'Black Widow'] ];</p>
+
+        <h4>Join() Method</h4>
+        <p>This can be used to turn an array into a string that includes all the items which are separated by commas.</p>
+        <p>avengers.join()</p>
+        <p>result : 'Captain America, Iron Man, Thor, Hulk, Hawkeye, Black Widow'</p>
+        <p>You also have the option of choosing a different separator:</p>
+        <p>avengers.join(' & ')</p>
+        <p>result : 'Captain America & Iron Man & Thor & Hulk & Hawkeye & Black Widow'</p>
+
+        <h4>Slicing and Splicing</h4>
+        <p>Using slice() creates a subarray - it chops out a slice of the original array. It starts at the first position and finishes at another</p>
+        <p>avengers.slice(2,4) // starts at the third item (index of 2) and finishes at the fourth (the item with index 4 is not included)</p>
+        <p>result : ['Thor', 'Hulk']</p>
+        <p>This does not change the original avengers array. ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow']</p>
+        <p>Using splice() removes items from an array then inserts new items in their place.</p>
+        <p>avengers.splice(3, 1, 'Scarlet Witch');</p>
+        <p>This removes the string 'Hulk' and replaces it with 'Scarlet Witch'</p>
+        <p>['Captain America', 'Iron Man', 'Thor', 'Scarlet Witch', 'Hawkeye', 'Black Widow']</p>
+        <p>This is a destructive array that changes the original array.</p>
+        <p>The splice method can also be used to insert values into an array at a specific index without removing any items - you just need to indicate that zero items are to be removed</p>
+        <p>avengers.splice(4,0,'Quicksilver');</p>
+        <p>Nothing was removed and the new value has been added into position 4</p>
+        <p>result : [ 'Captain America','Iron Man', 'Thor', 'Scarlet Witch', 'Quicksilver', 'Hawkeye', 'Black Widow' ]</p>
+        <p>When delete is used it leave the value of undefined in its place. Splice removes the value completely.</p>
+        <p>example : avengers.splice(2,1); // will remove the item at index 2 (i.e. the third item in the array) - ['Thor']</p>
+        <p>Thor has now been completely removed</p>
+        <p>['Captain America', 'Iron Man', 'Scarlet Witch', 'Quicksilver', 'Hawkeye', 'Black Widow']</p>
+
+        <h4>reverse()</h4>
+        <p>reverse() reverses the order of the array and is permanent.</p>
+        <p>avengers.reverse();</p>
+        <p>result : ['Black Widow', 'Hawkeye', 'Quicksilver', 'Scarlet Witch', 'Iron Man', 'Captain America']</p>
+
+        <h4>sort()</h4>
+        <p>This sorts the order of the array items alphabetically which is permanent</p>
+        <p>avengers.sort()</p>
+        <p>result : ['Black Widow', 'Captain America', 'Hawkeye', 'Iron Man', 'Quicksilver', 'Scarlet Witch']</p>
+        <hr>
+
+        <h4 id="functions">Functions</h4>
+        <p>Functions are chunks of code that can be referenced by a name. They help reduce repetition and allow others to follow easily.</p>
+
+        <h4>Defining a Function</h4>
+        <h5> - Function Declarations</h5>
+        <p>function hello() {console.log('Hello World');}</p>
+        <p>This starts with the function keyword and is followed by the name of the function, which in this case is called ' hello ', followed by parentheses. Following this is a block that contains the code for the function. This is known as a named function
+            as the function has a name: ' hello '.</p>
+
+        <h5> - Function Expressions</h5>
+        <p>This is another way of defining a function literal. It assigns an anonymous function to a variable:</p>
+        <p>const goodbye = function() {console.log("Goodbye World!')};</p>
+        <p>They are called anonymous functions because they are not given names. We can create a named function expression instead:</p>
+        <p>const goodbye = function bye(){console.log('Goodbye World!')};</p>
+        <p>This function has the name bye and assiged to the variable goodbye.</p>
+        <p>The semicolon at the end finishes the assignment statement. A normal function does not need one as it ends in a block.</p>
+
+        <h5> - Function() Constructors</h5>
+        <p>A function can be declared using the const function() as per the example below:</p>
+        <p>const hi = new Function('console.log("Hi World!");');</p>
+        <p><strong>This is not recommended - functions should always be declared using function literals</strong></p>
+
+        <h5> - Invoking a Function</h5>
+        <p>A function can be invoked by running the code inside the functions body.</p>
+        <p>hello(); - functions can be invoked over and over again using this method. This will also help with reduce code repetition.</p>
+
+        <h5> - Keep your code D R Y</h5>
+        <p><em>D</em>on't</p>
+        <p><em>R</em>epeat</p>
+        <p><em>Y</em>ourself</p>
+        <p>If you have assigned a function to a variable, you need to place parentheses after the variable to invoke it as a function:</p>
+        <p>goodbye();</p>
+        <p>result : 'Goodbye World!'</p>
+        <p>Without the parentheses you are just referencing the function which results in : [Function: goodbye] which is the function definition.</p>
+        <p>This can be useful if you want to assign the function to another variable</p>
+        <p>seeya = goodbye;</p>
+        <p>[Function: goodbye]</p>
+        <p>The variable now points to the function bye and can be used to invoke it:</p>
+        <p>seeya();</p>
+        <p>result: 'Goodbye World!'</p>
+
+        <h5> - Return Values</h5>
+
     </main>
 
 </body>
