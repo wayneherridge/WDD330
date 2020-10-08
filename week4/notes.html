@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <h3>Wayne Herridge - WDD 330 Portfolio</h3>
+    </header>
+
+    <main>
+        <h3>Week 4 - Notes</h3>
+        <hr>
+
+        <h4>Contents</h4>
+        <ul>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#OOP">Object-Oriented Programming</a></li>
+        </ul>
+        <hr>
+
+        <h4 id="forms">Forms</h4>
+        <p>Forms are made up of elements such as input fields, select menus and buttons.</p>
+        <p>The data entered into forms was traditionally sent and processed to a backend language like PHP or Ruby. It is possible now to process the information on the from end before sending it to the server using JS.</p>
+        <p>When building a form the designer/creator must have design principles at the forefront of their mind. Your form must give the user a good experience.</p>
+        <p><a href="search.html">Searching Example</a></p>
+        <p>form.reset() will reset all the form controls back to their initial values.</p>
+        <pre>
+                <button type='reset'>Reset</button>
+        </pre>
+        <p>This is not the best idea for user experience. The button can be easily pushed and the form entries lost.</p>
+        <p>The form.action property can be used to set the action attribute, so it's sent to a different URL for processing</p>
+        <p>example: form.action = '/an/other.url'</p>
+        <hr>
+
+        <h4>Form Events</h4>
+        <p>Some of the events that forms are able to trigger are exclusive to forms.</p>
+        <p>The focus event occurs when an element is focused on.</p>
+        <pre>
+            <code>
+                const input = form.elements.searchInput;
+                input.addEventListener('focus', () => alert('focused'), false); 
+            </code>
+        </pre>
+        <p>When the cursor is placed inside the the element (input) either by clicking or navigating to it on the keyboard it will show the message 'focused' on the screen.</p>
+        <p>When the cursor is placed in the input field the message should appear.</p>
+        <hr>
+        <h4>Submitting a Form</h4>
+        <p>A submit event occurs when a form is submitted.</p>
+        <p>The content of the form is usually sent to the server to be processed but Javascript can be used to intercept the form before it is sent.</p>
+        <pre>
+            <code>
+                const form = document.forms['search'];
+                form.addEventListener ('submit', search, false);
+                
+                function search() {
+                    alert('Form Submitted');
+                }
+            </code>
+        </pre>
+        <p>When the submit button is clicked a message appears which says 'Form Submitted.</p>
+        <p>When we use the preventDefault() method it stops the form from being submitted to the URL.</p>
+        <pre>
+            <code>
+                function search(event) {
+                    alert('Form Submitted');
+                    event.preventDefault();
+                }
+            </code>
+        </pre>
+        <p>When an attempt is made to submit the form the message still appears but the form does not try and submit itself to the dummy URL.</p>
+        <hr>
+        <h4>Retrieving and Changing Values From a Form</h4>
+        <p>The value property within an input element can be sued to retrieve text inside the field.</p>
+        <pre>
+            <code>
+                function search(event) {
+                    alert(`You Searched for: ${input.value}`);
+                    event.preventDefault();
+                }
+            </code>
+        </pre>
+        <p>Input is the variable that points to the input element in the form.</p>
+        <hr>
+        <h4>Form Controls</h4>
+        <h5>Common Types of Form Control</h5>
+        <ul>
+            <li>input</li>
+            <li>select</li>
+            <li>textarea</li>
+            <li>button</li>
+        </ul>
+        <p><a href="hero.html">Form Example using these elements</a></p>
+        <h5>Other Types of Form Controls</h5>
+        <h5>Input Fields</h5>
+        <ul>
+            <li>Text Input Fields - used for short text (username etc) - type='text'</li>
+            <li>Password Input Fields - used to enter passwords or secret information - type='password'</li>
+            <li>Checkbox Input Fields - used to select different options at the same time - type='checkbox'</li>
+            <li>Radio Button Input Fields - only one of the options shown can be selected - type='radio'</li>
+            <li>Hidden Input Fields - not displayed by the browser but is given a value - submitted with the form - type='hidden'</li>
+            <li>File Input Types - used for uploading files - type='file'</li>
+            <li>Other Input Types - number, tel, color</li>
+            <li>Select Drop-Down List - a drop down list which can allow for more than one option to be selected - select and option</li>
+            <li>Text Areas - a textarea element is used to enter a block of text - textarea is the element name.</li>
+            <li>Buttons - Default type is submit. Reset is also an option which deletes the content of the inputs of the form. Button is the other type - not attached to anything and can be standalone.</li>
+        </ul>
+        <h5>Form Validation</h5>
+        <p>This goes through the form and checks to make sure everything is correct.</p>
+        <p>The types of validation are:</p>
+        <ol>
+            <li>A require field - check that it has been completed</li>
+            <li>An email address - check that what has been enetered is a valid format</li>
+            <li>A number - check that the content is only numeric</li>
+            <li>A password - check that the rules that have been set for a password has been followed</li>
+        </ol>
+        <p>These items can be added using HTML but there is also a way of implementing validation using Javascript.</p>
+        <p>This way of validation is not standard so you would have to make up your own rules.</p>
+
+        <h5>Instant Feedback</h5>
+        <p>Instant feedback improves userbility. Event listeners can be added directly to the input field and it will fire when the user presses a key.</p>
+        <hr>
+        <h4 id="OOP">Object-Oriented Programming</h4>
+        <p>The three main concepts in OOP are: encapsulation, polymorphism and inheritance.</p>
+        <h5>Encapsulation</h5>
+        <p>The inner workings are kept hidden inside the object and only the essential functionalities are exposed to the end user.</p>
+        <h5>Polymorphism</h5>
+        <p>The same process can be used on for different objects. In OOP various objects can share the same method but can also override shared methods with a more specific implementation.</p>
+        <h5>Inheritance</h5>
+        <p>This takes an object that already exists and inherits all of its properties and methods.</p>
+        <hr>
+        <h4>Classes</h4>
+        <p>The juicer class would represent the design of the juicer, and each juicer that’s made on the production line would be instances of that class.</p>
+        <hr>
+        <h4>Constructor Functions</h4>
+
+    </main>
+</body>
+
+</html>
