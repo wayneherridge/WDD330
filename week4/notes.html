@@ -139,7 +139,17 @@
         <p>The juicer class would represent the design of the juicer, and each juicer that’s made on the production line would be instances of that class.</p>
         <hr>
         <h4>Constructor Functions</h4>
-
+        <pre>
+    <code>
+        const Dice = function(sides=6){
+            this.sides = sides;
+            this.roll = function() {
+                return Math.floor(this.sides * Math.random() + 1)
+            }
+        }
+    </code>
+</pre>
+        <h4>Static Methods</h4>
     </main>
 </body>
 
