@@ -22,10 +22,11 @@
         <ul>
             <li><a href="#forms">Forms</a></li>
             <li><a href="#OOP">Object-Oriented Programming</a></li>
+            <li><a href="#modJS">Modern Javascript</a></li>
         </ul>
         <hr>
 
-        <h4 id="forms">Forms</h4>
+        <h3 id="forms">Forms</h3>
         <p>Forms are made up of elements such as input fields, select menus and buttons.</p>
         <p>The data entered into forms was traditionally sent and processed to a backend language like PHP or Ruby. It is possible now to process the information on the from end before sending it to the server using JS.</p>
         <p>When building a form the designer/creator must have design principles at the forefront of their mind. Your form must give the user a good experience.</p>
@@ -126,7 +127,7 @@
         <h5>Instant Feedback</h5>
         <p>Instant feedback improves userbility. Event listeners can be added directly to the input field and it will fire when the user presses a key.</p>
         <hr>
-        <h4 id="OOP">Object-Oriented Programming</h4>
+        <h3 id="OOP">Object-Oriented Programming</h3>
         <p>The three main concepts in OOP are: encapsulation, polymorphism and inheritance.</p>
         <h5>Encapsulation</h5>
         <p>The inner workings are kept hidden inside the object and only the essential functionalities are exposed to the end user.</p>
@@ -149,7 +150,107 @@
         }
     </code>
 </pre>
+        <hr>
         <h4>Static Methods</h4>
+        <p>These can be used in class declarationns to create a static method or class methods. A static method is called by the class rather than by instances of the class.</p>
+        <pre>
+            <code>
+                class Dice {
+                    constructor(sides=6) {
+                        this.sides = sides;
+                    }
+                    roll() {
+                        return Math.floor(this.sides * Math.random() + 1)
+                    }
+                    static description() {
+                        return 'A way of choosing random numbers'
+                    }
+                }
+            </code>
+        </pre>
+        <p>This method is called from the Dice class - Dice.description()</p>
+        <p>Static methods are not available to instances of the class. So, in our example, the instances of Dice such as redDice and blueDice cannot call the static description() method: </p>
+        <p>redDice.description</p>
+        <p>>><i>TypeError: red.description is not a function</i></p>
+        <hr>
+        <h4>Getters & Setters</h4>
+        <pre>
+    <code>
+        me.age = 21;
+        me.retirementAge = 65;
+        Object.defineProperty(me, 'yearsToRetirement',{
+            get() {
+                if(this.age > this.retirementAge) { return 0; }
+                else { return this.retirementAge - this.age; }
+            },
+            set(value) {
+                this.age = this.retirementAge - value;
+                return value;
+            }
+        });
+    </code>
+</pre>
+        <p>if we add age and retirementAge properties to the me object, we can then create a yearsToRetirement property that depends on these properties</p>
+        <p>The get() and set() methods can be used to control how a property is set using assignment and the value that is returned when a property is queried.</p>
+        <p>The getter bases the yearsToRetirement property on the age and retirementAge properties</p>
+        <p>me.yearsToRetirement</p>
+        <p> >> 44</p>
+        <p>The setter also allows the age to be changed by setting the yearsToRetirement property:</p>
+        <p>me.yearsToRetirement = 10;</p>
+        <p> >> 10</p>
+        <p>me.age</p>
+        <p> >> 55</p>
+        <hr>
+        <h3 id="modJS">Modern Javascript Development</h3>
+
+        <hr>
+        <h4>MVC Frameworks - Model-View-Controller</h4>
+        <ul>
+            <li>Models - objects that implement the functionality for creating, reading, updating and deleting (known as CRUD tasks) specific pieces of information about the application, as well as any other associated logic and behavior</li>
+            <li>Views - provide a visual representation of the model showing all the relevant information</li>
+            <li>Controllers - link models and views together by communicating between them</li>
+        </ul>
+        <p><a href="MVC/list.html">MVC Example</a></p>
+        <hr>
+        <h4>Frameworks</h4>
+        <ul>
+            <li>Aurelia is a modern framework that uses ES6, and focuses on letting you write dynamic web applications while keeping the implementation details in the background.</li>
+            <li>Angularis a powerful framework by Google to make creating dynamic web applications easier. This is done by extending the HTML language using custom ng- attributes.</li>
+            <li>Emberis a framework designed to make building large web applications easier. It does this by using common conventions that avoid the need for lots of set-up code, though it can become more difficult if you don’t follow these conventions.</li>
+        </ul>
+        <hr>
+        <h4>Templates</h4>
+        <p>Templating languages allow HTML to be separated from the JavaScript program.</p>
+        <p>Templating languages often have a mechanism for inserting dynamic data into the HTML.</p>
+        <ul>
+            <li>Handlebars</li>
+            <li>Pug</li>
+            <li>EJS</li>
+            <li>Mustache</li>
+            <li>Nunjucks</li>
+        </ul>
+        <h4>View Libraries</h4>
+        <ul>
+            <li>React</li>
+            <li>Vue</li>
+            <li>Svelte</li>
+        </ul>
+        <hr>
+        <h4>Webpack</h4>
+        <p>Webpack is a module bundler that takes all the JavaScript files used in your project and bundles them altogether in one file.</p>
+        <p>This also allows you to perform tasks such as:</p>
+        <ul>
+            <li>Transpiling code</li>
+            <li>Minifying Code</li>
+            <li>Linting Code</li>
+            <li>Testing Code</li>
+            <li>Compiling CSS preprocessor files (such as Sass, Less or Stylus) into standard CSS files.</li>
+        </ul>
+        <h4>Webpack Example</h4>
+        <p>
+            <a href="webpack-example/webpack.html">Webpack Example</a>
+        </p>
+
     </main>
 </body>
 
