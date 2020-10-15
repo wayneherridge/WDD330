@@ -5,19 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wayne's ToDo List</title>
+
+    <style>
+
+    </style>
+
+    <script type="module" src="js/ToDo.js"></script>
 </head>
 
 <body>
-    <h1>Todos</h1>
-    <ul>
-        <li>Task</li>
-        <li>Task</li>
-        <li>Task</li>
-        <li>Task</li>
-    </ul>
-    <p>tasks left</p>
-    <p></p>
+    <div class="container">
+        <h1>Todos</h1>
+        <div class="todos-wrapper">
+            <div id="todos">
 
+            </div>
+            <div class="todo-filters">
+
+            </div>
+        </div>
+        <div class="add-todo-wrapper">
+            <input type="text" id="todoInput">
+            <button id="addBtn">Add</button>
+
+        </div>
+    </div>
 </body>
 
 </html>

@@ -17,19 +17,47 @@
     <main>
         <h3>Week 5 - Notes</h3>
         <hr>
-
-        <h4>Contents</h4>
-        <ul>
-            <li>
-                <a href="#"></a>
-            </li>
-            <li>
-                <a href="#"></a>
-            </li>
-            <li>
-                <a href="#"></a>
-            </li>
-        </ul>
+        <h4>Testing and Debugging</h4>
+        <p>Errors and bugs are a way of life in programming. There are ways to identify and deal with the problems as they arrise.</p>
         <hr>
+        <h4>Errors, Exceptions, and Warnings</h4>
+        <p>Errors are caused by one of the following:</p>
+        <ul>
+            <li>System Error</li>
+            <li>Programmer Error</li>
+            <li>User Error</li>
+        </ul>
+        <h4>Exceptions</h4>
+        <p>Exceptions return a value that can be used by the program to deal with the error</p>
+        <p>If we try to call a method that is non existent it will result in an error - in this case it is a reference error.</p>
 
-        <h3 id="#"></h3>
+        <h4>Stack Traces</h4>
+        <p>This is something that is produced by an exception.</p>
+        <p>It is a sequence of functions or method calls that lead to the point where the exception occurred.</p>
+
+        <h4>Warnings</h4>
+        <p>A warning can occur if there is an error in the code - this will also be something that is not enough to make the program crash.</p>
+        <p>Example: Assigning a value to an undeclared variable can cause a warning to happen.</p>
+
+        <h4>The Importance of Testing and Debugging</h4>
+        <p>It is important to be able to catch errors early so testing specific code is important - test and deal with issues quickly.</p>
+
+        <h4>Strict Mode</h4>
+        <p>ECMAScript 5 introduced a strict mode that produces more exceptions and warnings and prohibits the use of some deprecated features. This is due to the fact that strict mode considers coding practices that were previously accepted as just being
+            'poor style' as actual errors.</p>
+        <p>Strict mode encourages a better quality of JavaScript to be written that befits a ninja programmer, so its use is recommended.</p>
+
+        <h4>Linting Tools</h4>
+        <p>Linting tools such asJS Lint,JS Hint,andES Lintcan be used to test the quality of JavaScript code, beyond simply using strict mode. They are designed to highlight any sloppy programming practices or syntax errors, and will complain if certain
+            style conventions are not followed, such as how code is indented. </p>
+
+        <h4>Alert</h4>
+        <p>alert() is the most basic form of debugging. They can be added at the points of the code you want to check.</p>
+
+        <h4>Debugging Tools</h4>
+        <p>Browsers such as Chrome have developer tools and can be used to add break points and additional checks while code is running.</p>
+        <p>This can be a really good way of checking errors if code isn't working as expected.</p>
+
+        <h4>Throwing Exceptions</h4>
+        <p>Exceptions can also be forced - this allows problems in code to be highlighted and dealt with.</p>
+        <p>These can be applied to any js exception.</p>
