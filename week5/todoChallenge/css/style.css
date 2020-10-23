@@ -20,7 +20,6 @@ section {
 
 #todos {
     margin: 5px;
-    border: 1px solid red;
 }
 
 .todo {
@@ -34,7 +33,7 @@ section {
 }
 
 .todo-content {
-    padding: 4px;
+    padding: 10px;
 }
 
 .todo-delete-btn {
