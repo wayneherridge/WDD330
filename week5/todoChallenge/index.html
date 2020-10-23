@@ -8,31 +8,33 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
+
+    <script type="module" src="js/ToDo.js"></script>
 </head>
 
 <body>
     <div class="container">
+        <h1>Todos</h1>
+        <hr>
+        <div class="todos-wrapper">
+            <div id="todos">
 
-        <h1>Todo List</h1>
+            </div>
+            <hr>
+            <div class="todo-filters">
+                <div id="count"></div>
+                <button id="viewAll">All</button>
+                <button id="viewActive">Active</button>
+                <button id="viewCompleted">Completed</button>
+            </div>
+            <hr>
+        </div>
+        <div class="add-todo-wrapper">
+            <input type="text" id="todoInput">
+            <button id="addBtn">Add</button>
 
-        <section class="todo-list">
-
-        </section>
-
-        Add item...
-        <input type="text" id="todo-value" />
-
-        <section>
-            <a href="#all">all</a>
-            <a href="#completed">completed</a>
-            <button id="delete">Delete Completed</button>
-        </section>
+        </div>
     </div>
-    <script type="text/javascript" src="js/helper.js"></script>
-    <script type="text/javascript" src="js/controller.js"></script>
-    <script type="text/javascript" src="js/model.js"></script>
-    <script type="text/javascript" src="js/view.js"></script>
-    <script type="text/javascript" src="js/router.js"></script>
 </body>
 
 </html>
