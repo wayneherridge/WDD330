@@ -16,6 +16,234 @@
 
     <main>
         <h3>Week 7 - Notes</h3>
+        <hr>
+        <h3>Contents</h3>
+        <ul>
+            <li><a href="#func">Functions</a></li>
+            <li><a href="#ajax">AJAX</a></li>
+        </ul>
+        <h4 id="func">Further Functions</h4>
+        <p>First class objects that can be passed around the same way as any other value.</p>
+        <hr>
+        <h4>Function Properties and Methods</h4>
+        <p>All functions have a length property that returns the number parameters the function has.</p>
+        <h4>Call and Apply Methods</h4>
+        <p>Using the call method can be useful when setting the value of 'this' inside a function.</p>
+        <p>example of this below:</p>
+        <pre>
+            <code>
+                function sayHello(){
+                    return `Hello, my name is ${ this.name }`;
+                }
+
+                const clark = { name: 'Clark' };
+                const bruce = { name: 'Bruce' };
+
+                sayHello.call(clark);
+                << 'Hello, my name is Clarke'
+                
+                sayHello.call(bruce);
+                << 'Hello, my name is Bruce'
+            </code>
+        </pre>
+        <hr>
+        <pre>
+            <code>
+                function sayHello(greeting='Hello'){
+                    return `${ greeting }, my name is ${ this.name }`;
+                }
+                sayHello.call(clark, 'How do you do');
+                << 'How do you do, my name is Clark'
+
+                sayHello.call(bruce);
+                << 'Hello, my name is Bruce'
+            </code>
+        </pre>
+        <h4>Custom Properties</h4>
+        <p>Creating and adding your own properties to functions can also be created.</p>
+        <p>An example of this is adding a description property to a function to describe what it does.</p>
+        <h4>Memoization</h4>
+        <p>Result caching can also be a useful feature.</p>
+        <p>A result can be stored in cache and then recalled later instead of having to run the computation again</p>
+        <pre>
+            <code>
+                function square(x){
+                    square.cache = square.cache || {};
+                    if (!square.cache[x]) {
+                        square.cache[x] = x*x;
+                    }
+                    return square.cache[x]
+                }
+            </code>
+        </pre>
+        <p>What is then stored and able to be recalled?</p>
+        <pre>
+            <code>
+                square(3);
+                << 9
+
+                square(-11);
+                << 121
+
+                square.cache;
+                << {"3": 9, "-11": 121}
+            </code>
+        </pre>
+        <h4>Immediately Invoked Function Expressions</h4>
+        <p>This is also called IIFY or 'iffy' is an anonymous function that is invoked as soon as it is defined.</p>
+        <p>This is a useful way of performing a task while keeping variables wrapped up within the scope of the function.</p>
+        <p>This reduces the amount of variables within the global namespace.</p>
+        <h4>Temporary Variables</h4>
+        <p>To stop variables that may cause confusion it is better to use an IIFE which will then store the variable and be able to recall it when needed.</p>
+        <h4>Initialization Code</h4>
+        <p>An IIFE can also be used to set up code that there will be no need for again.</p>
+        <pre>
+            <code>
+                (function() {
+                    const name = 'Peter Parker'; // This might be obtained from a cookie in reality
+                    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday', 'Friday','Saturday'];
+                    const date = new Date(),today = days[date.getDay()];
+                    console.log(`Welcome back ${name}. Today is ${today}`);
+                })();
+        
+                << 'Welcome back Peter Parker. Today is Tuesday'
+            </code>
+        </pre>
+        <h4>Strict Mode</h4>
+        <p>This avoids any sloppy coding practices and should be used at the beginning of a file.</p>
+        <pre>
+            <code>
+                (function() {
+                    'use strict';
+                // All your code would go inside this function
+                })();
+            </code>
+        </pre>
+        <h4>Callbacks - functions passed to other functions as arguments then invoked</h4>
+        <h3>Event-driven Async Programming</h3>
+        <p>Callbacks can be used to facilitate event-driven async programming.</p>
+        <p>JS is single threaded - only one piece of code processed at a time.</p>
+        <h4>Promises - the future result of an async operation</h4>
+        <h4>Async functions</h4>
+        <p>Async example:</p>
+        <pre>
+            <code>
+                async function loadGame(userName) {
+                    try {
+                        const user = await login(userName);
+                        const info = await getPlayerInfo (user.id);
+                        // load the game using the returned info
+                    }
+                    catch (error){
+                        throw error;
+                    }
+                }
+            </code>
+        </pre>
+        <h4>Generators</h4>
+        <p>Special functions used to produce iterators that maintain the state of a function.</p>
+        <h4>Functional Programming</h4>
+        <h3>Pure Functions</h3>
+        <p>A function that adheres to the following rules:</p>
+        <ul>
+            <li>The return value of a pure function should only depend on the values provided as arguments. It doesn't rely on values from somewhere else in the program.</li>
+            <li>No Side effects - no changes to values or data elsewhere in the program.</li>
+            <li>Always return the same result.</li>
+        </ul>
+        <h4>High order functions</h4>
+        <p>They accept another function as an argument or return another function as a result.</p>
+        <hr>
+        <h3 id="ajax">AJAX</h3>
+        <h4>Clients and Servers</h4>
+        <p>Clients - Web browser</p>
+        <p>Servers - Processes the request from the client and sends back a response to the user.</p>
+        <h3>Fetch API</h3>
+        <p>Living standard for requesting and sending data async across a network. They use promises to avoid callback hell.</p>
+        <h3>Basic Usage</h3>
+        <p>A basic example:</p>
+        <pre>
+            <code>
+                fetch('https://example.com/data')
+                .then( // code that handles the response )
+                .catch( // code that runs if the server returns an error )
+            </code>
+        </pre>
+        <h4>Response Interface</h4>
+        <p>Checks can be added to check that the request was a success:</p>
+        <pre>
+            <code>
+                const url = 'https:example.com/data';
+                fetch(url)
+                .then((response) => {
+                        if(response.ok) {
+                            return response;
+                        }
+                        throw Error(response.statusText);
+                    })
+                    .then( response => // do something with response )
+                    .catch( error => console.log('There was an error!') )
+            </code>
+        </pre>
+        <h4>Redirects</h4>
+        <p>A redirect can be used to redirect to another URL:</p>
+        <pre>
+            <code>
+                fetch(url)
+                .then( response => response.redirect(newURL)); // redirects to another URL
+                .then( // do something else )
+                .catch( error => console.log('There was an error: ', error))
+            </code>
+        </pre>
+        <h4>Text Responses</h4>
+        <p>A text response promise would look like this:</p>
+        <pre>
+            <code>
+                fetch(url)
+                .then( response => response.text() ); // transforms the text stream into a JavaScript string
+                .then( text => console.log(text) )
+                .catch( error => console.log('There was an error: ', error))
+            </code>
+        </pre>
+        <h4>File Response</h4>
+        <p>A file response would look like this:</p>
+        <pre>
+            <code>
+                fetch(url)
+                .then( response => response.blob() ); // transforms the data into a blob object
+                .then( blob => console.log(blob.type) )
+                .catch( error => console.log('There was an error: ', error))
+            </code>
+        </pre>
+        <h4>JSON Responses</h4>
+        <p>A JSON response would look like this:</p>
+        <pre>
+            <code>
+                fetch(url)
+                .then( response => response.json() ); // transforms the JSON data into a JavaScript object
+                .then( data => console.log(Object.entries(data)) )
+                .catch( error => console.log('There was an error: ', error))
+            </code>
+        </pre>
+        <h4>Headers, Request and Response</h4>
+        <pre>
+            <code>
+                const url = 'https:example.com/data';
+                const headers = new Headers({ 'Content-Type': 'text/plain', 'Accept-Charset' : 'utf-8', 'Accept-Encoding':'gzip,deflate' })
+                const request = (url,{
+                    headers: headers
+                })
+                fetch(request)
+                .then( function(response) {
+                    if(response.ok) {
+                        return response;
+                    }
+                    throw Error(response.statusText);
+                })
+                .then( response => // do something with response )
+                .catch( error => console.log('There was an error!') )
+            </code>
+        </pre>
+        <p><a href="todo.html">Todo Example</a></p>
     </main>
 </body>
 
