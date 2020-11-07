@@ -46,12 +46,76 @@
         <h4>Changing the Origin of the Transform</h4>
         <p>The origin of the transform can be controlled using the transform-origin property.</p>
         <h3>Transitions</h3>
-        <p></p>
-        <h4></h4>
+        <p>Transitions allow the values of CSS properties to change over time, essentially providing simple animations.</p>
+        <h4>Steps to creating a simple transition:</h4>
+        <ol>
+            <li>Declare the original state of the element in the default style declaration.</li>
+            <li>Declare the final state of your transitioned element; for example, a :hover state.</li>
+            <li>Include the transition functions in your default style declaration using the transition properties, including: transition-property, transition-duration, transition-timing-function, and transition-delay. We’ll look at each of these and how
+                they work shortly.</li>
+        </ol>
+        <h4>Animations</h4>
+        <p>CSS animations, unlike transitions, allow you to control each step of an animation via keyframes.</p>
+        <p>This is much the same as FLASH works - with keyframes</p>
+        <h4>Keyframes</h4>
+        <p>To animate an element in CSS, you first create a named animation, then attach it to an element in that element’s property declaration block. Animations in themselves don’t do anything; in order to animate an element, you’ll need to associate the
+            animation with that element.</p>
         <hr>
-        <h3 id="ch12">Canvas, SVG, and Drap and Drop</h3>
-
-
+        <h3 id="ch12">Canvas, SVG, and Drag and Drop</h3>
+        <h4>Canvas</h4>
+        <p>With HTML5’s Canvas API, we can draw anything we can imagine, all through JavaScript.</p>
+        <p>The canvas API is supported in these browsers:</p>
+        <ul>
+            <li>Chrome 4+</li>
+            <li>Firefox 2+</li>
+            <li>Opera 9.6+</li>
+            <li>Safari 3.1+</li>
+            <li>iOS 3.2+</li>
+            <li>IE 9.0+</li>
+            <li>Android 3.0+</li>
+        </ul>
+        <h4>Creating a canvas Element</h4>
+        <p>The tag start and ends are not included so that they can be seen on this page:</p>
+        <pre>
+            <code>
+                canvas id="myCanvas" class="myCanvas"
+                    Sorry! Your browser doesn’t support Canvas.
+                canvas
+            </code>
+        </pre>
+        <p>This can be used to create shapes, colors and text etc.</p>
+        <pre>
+            <code>
+                function drawCircle(canvas) {
+                var context = canvas.getContext("2d");
+                context.beginPath();
+                context.arc(100, 100, 50, 0, Math.PI*2, true);
+                context.closePath();
+                context.strokeStyle = "red";
+                context.fillStyle = "blue";
+                context.lineWidth = 3;
+                context.fill(); 
+                context.stroke(); 
+                }
+            </code>
+        </pre>
+        <h4>SVG</h4>
+        <p>SVG stands for Scalable Vector Graphics, a specific file format that allows you to describe vector graphics using XML. A major selling point of vector graphics in general is that, unlike bitmap images (such as GIF, JPEG, PNG, and TIFF), vector
+            images preserve their quality even as you blow them up or shrink them down.</p>
+        <p>SVG is a lot more complicated to write - especially for complicated shapes.</p>
+        <h4>Drag and Drop</h4>
+        <p>This API allows us to specify that certain elements are draggable, and then specify what should happen when these draggable elements are dragged over or dropped onto other elements on the page.</p>
+        <p>To make elements draggable we need to add the draggable attribute to them - please see Dev Tools for the JS code.</p>
+        <pre>
+    <code>
+        <img src="images/computer-mouse-pic.svg" width="30" 
+        alt="mouse treat" id="mouse1" draggable="true">
+        <img src="images/computer-mouse-pic.svg" width="30" 
+        alt="mouse treat" id="mouse2" draggable="true">
+        <img src="images/computer-mouse-pic.svg" width="30" 
+        alt="mouse treat" id="mouse3" draggable="true">
+    </code>
+    </pre>
 
     </main>
 </body>
