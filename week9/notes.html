@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <h3>Wayne Herridge - WDD 330 Portfolio</h3>
+    </header>
+
+    <main>
+        <h3>Week 9 - Notes</h3>
+        <hr>
+        <h3>Contents</h3>
+        <ul>
+            <li><a href="#ch9">The Window Object</a></li>
+            <li><a href="#ch14">HTML5 APIs</a></li>
+            <li><a href="#wfe">Front End Workflow Exercise</a></li>
+        </ul>
+        <h3 id="ch9">The Window Object</h4>
+            <p>This is a global object which is specifically designed for the browser.</p>
+            <hr>
+            <h4>Browser Object Model (BOM)</h4>
+            <p>This is a collection of properties and methods that contain information about the browser and computer screen.</p>
+            <h4>Going Global</h4>
+            <p>When there are global variables created for the BOM there is no need for const, let, or var keywords.</p>
+            <h4>Dialogs</h4>
+            <p>Example: something like the window.alert() method pauses the execution of the program and displays a message in a dialog box.</p>
+            <p>This can also be used to confirm information and also with an input to collect information.</p>
+            <h4>Location</h4>
+            <p>This looks specifically at the information contained within a URL.</p>
+            <h4>Browser History</h4>
+            <p>The window.history property gives information about previously visited sites in the current browser</p>
+            <h4>Controlling windows</h4>
+            <p>Windows can be given specific sizes, link destinations and whether the window can be resized or not. This is also how popups are written.</p>
+            <hr>
+            <h3 id="ch14">HTML5 APIs</h4>
+                <p>What other API's are available as part of the ES6 update.</p>
+                <hr>
+                <h4>Web Storage</h4>
+                <p>This is similar to cookies but has fewer restrictions.</p>
+                <p>The differences between cookies and web storage are:</p>
+                <ul>
+                    <li>Information stored isnotshared with the server on every request.</li>
+                    <li>Information is available in multiple windows of the browser (but only if the domain is the same).</li>
+                    <li>Storage capacity limit is much larger than the 4KB limit for cookies ( There is no actual limit in the specification, but most browsers have a limit set at 5GB per domain.).</li>
+                    <li>Any data stored does not automatically expire as it does with cookies. This potentially makes cookies a better choice for something like showing a popup once a day.</li>
+                </ul>
+                <p>Information can be stored, called, removed and cleared.</p>
+                <h4>Geolocation</h4>
+                <p>This is used to obtain the geographical poisitoning of the device. The users exact location can be obtained.</p>
+                <h4>Web Workers</h4>
+                <p>Web workers allow processes to be run in the background which add support to concurrency in JS</p>
+                <h4>Websockets</h4>
+                <p>This uses a system of request and response to send data back and forth. A problem with this method of communication is when you only get a response when a request is sent. </p>
+                <p>Websocket is a new protocol that allows two-way communication with a server – also known as push messaging. This means that a connection is kept open and responses are ‘pushed’ to the client as soon as they are received.</p>
+                <p><a href="./websocket example/index.html">Websocket Example</a></p>
+    </main>
+</body>
+
+</html>
