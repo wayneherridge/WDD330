@@ -1,0 +1,41 @@
+.container {
+    width: 300px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    text-align: center;
+}
+
+.todo-list>div {
+    height: 40px;
+}
+
+.crossed-out {
+    text-decoration: line-through;
+}
+
+section {
+    height: 335px;
+    overflow: auto;
+}
+
+#todos {
+    margin: 5px;
+}
+
+.todo {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.todo:nth-child(odd) {
+    background-color: lightgray;
+}
+
+.todo-content {
+    padding: 10px;
+}
+
+.todo-delete-btn {
+    margin-left: auto;
+}
