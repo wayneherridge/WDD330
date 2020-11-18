@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 Portfolio</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <h3>Wayne Herridge - WDD 330 Portfolio</h3>
+    </header>
+
+    <main>
+        <h3>Week 10 - Notes</h3>
+        <hr>
+        <h3>Contents</h3>
+        <ul>
+            <li><a href="#frmVal">Client-side form validation</a></li>
+            <li><a href="#useFetch">Using Fetch</a></li>
+        </ul>
+        <h3 id="frmVal">Client-side form validation</h3>
+        <p>Client-side validation should not be considered an exhaustive security measure! Your apps should always perform security checks on any form-submitted data on the server-side as well as the client-side, because client-side validation is too easy
+            to bypass, so malicious users can still easily send bad data through to your server.</p>
+        <hr>
+        <h4>What is form validation?</h4>
+        <p>When data is entered into a form that does not belong or is in the format that is not expected messages like the following appear:</p>
+        <ul>
+            <li>"This field is required" (You can't leave this field blank).</li>
+            <li>"Please enter your phone number in the format xxx-xxxx" (A specific data format is required for it to be considered valid).</li>
+            <li>"Please enter a valid email address" (the data you entered is not in the right format).</li>
+            <li>"Your password needs to be between 8 and 30 characters long and contain one uppercase letter, one symbol, and a number." (A very specific data format is required for your data).</li>
+        </ul>
+        <p>Get the data in the right format</p>
+        <p>Protect our users' data</p>
+        <p>Protect ourselves</p>
+        <hr>
+        <h4>Different types of client-side validation</h4>
+        <p>Built in form validation - HTML5 has better performance than Javascript.</p>
+        <p>Javascript - validation is coded but is completely customizable</p>
+        <hr>
+        <h4>Using built-in form validation</h4>
+        <p>HTML5 has built in validation</p>
+        <ul>
+            <li>required - this tells the form and the user what is required to be entered into the form</li>
+            <li>minlength and maxlength - min and max length of text data strings</li>
+            <li>min and max - min and max values when using numbers</li>
+            <li>type - this specifies if the field is a number, email address or another field type.</li>
+            <li>pattern - a regular expression that defines a pattern the input data needs to follow</li>
+        </ul>
+        <h4><a href="./fruit/index.html">Fruit Start Example</a></h4>
+        <hr>
+        <h3 id="useFetch">Using Fetch</h3>
+        <p>The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses.</p>
+        <hr>
+        <h4>Basic Fetch Request</h4>
+        <pre>
+            <code>
+                fetch('http://example.com/movies.json')
+                .then(response => response.json())
+                .then(data => console.log(data));
+            </code>
+        </pre>
+        <hr>
+        <h4>Headers</h4>
+        <p>The Headers interface allows you to create your own headers object via the Headers() constructor. A headers object is a simple multi-map of names to values:</p>
+        <pre>
+            <code>
+                const content = 'Hello World';
+                const myHeaders = new Headers();
+                myHeaders.append('Content-Type', 'text/plain');
+                myHeaders.append('Content-Length', content.length.toString());
+                myHeaders.append('X-Custom-Header', 'ProcessThisImmediately');
+            </code>
+        </pre>
+        <hr>
+        <h4>Response objects</h4>
+        <p>Response instances are returned when fetch() promises are resolved.</p>
+        <pre>
+            <code>
+            const myBody = new Blob();
+
+            addEventListener('fetch', function(event) {
+                // ServiceWorker intercepting a fetch
+                event.respondWith(
+                    new Response(myBody, {
+                        headers: { 'Content-Type': 'text/plain' }
+                    })
+                );
+            });
+            </code>
+        </pre>
+    </main>
+</body>
+
+</html>

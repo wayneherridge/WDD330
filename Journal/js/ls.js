@@ -1,4 +1,4 @@
-function saveTodo(entry) {
+function saveTodo(todo) {
     const toDoList = getTodoList();
 
     toDoList.push(todo);
@@ -16,12 +16,6 @@ function updateTodo(id) {
     localStorage.setItem('todoList', JSON.stringify(toDoList));
 
     console.log(getTodoList());
-};
-
-function deleteTodo(id) {
-    const todoList = getTodoList();
-    const updateTodos = todoList.filter(todo => todo.id != id);
-    localStorage.setItem('todoList', JSON.stringify(updateTodos));
 };
 
 function getTodoList() {
