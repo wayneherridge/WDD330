@@ -30,6 +30,9 @@ const links = [{
 }, {
     label: "Week10",
     url: "week10/index.html"
+}, {
+    label: "Week 14 - Final Project",
+    url: "myJournal/index.html"
 }]
 
 links.forEach(link => {
