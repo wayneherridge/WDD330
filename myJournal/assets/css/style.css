@@ -1,0 +1,94 @@
+    @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100&family=Mountains+of+Christmas:wght@700&display=swap');
+    html {
+        padding: 0;
+        margin: 10px;
+    }
+    
+    body {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Mountains of Christmas', cursive;
+    }
+    
+    h1 {
+        font-size: 4rem;
+        color: #C52A2A;
+    }
+    
+    table {
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 100%;
+        text-align: left;
+        background-color: white;
+        table-layout: fixed;
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+    
+    th,
+    td {
+        height: 1.5em;
+    }
+    
+    .form-control {
+        width: 100%;
+        border: 1px solid black;
+        height: 3.5em;
+    }
+    
+    form {
+        font-family: 'Mountains of Christmas', cursive;
+        margin: 20px;
+    }
+    
+    label {
+        color: #C52A2A;
+        font-size: 1.5em;
+    }
+    
+    input[type=submit] {
+        height: 50px;
+        width: 100%;
+        color: #c52a2a;
+        background-color: #7fab65;
+    }
+    
+    input[type=submit]:hover {
+        background-color: #659a48;
+    }
+    
+    .alert {
+        background-color: #7fab65;
+        color: yellow;
+    }
+    
+    @media only screen and (min-width: 768px) {
+        /* tablets and desktop */
+        .container {
+            display: flex;
+        }
+        th.date {
+            width: 30%;
+        }
+        th.title {
+            width: 50%;
+        }
+        th.entry {
+            width: 70%;
+        }
+    }
